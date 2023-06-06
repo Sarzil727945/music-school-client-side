@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/logoS.jpeg'
 import ActiveLink from '../../ActiveLink/ActiveLink';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
@@ -31,8 +31,7 @@ const Header = () => {
                <Navbar bg="light" expand="lg" className=' mb-2'>
                     <Container fluid className='container'>
                          <Navbar.Brand href="#" className='fs-4 d-flex align-items-center'>
-                              <img className='logoStyle' src={logo} alt="" />
-                              <h2 className='ms-3'>Arts&Crafts</h2>
+                              <img className='logoStyle' src="https://img.freepik.com/free-vector/music-festival-text-with-musical-instruments_1308-122863.jpg?w=740&t=st=1686073180~exp=1686073780~hmac=0a444c1607f36c8ae5b92991aae02531dea22daa8d8342e0680d1751fd1bf2cd" alt="" />
                          </Navbar.Brand>
                          <Navbar.Toggle aria-controls="navbarScroll" />
                          <Navbar.Collapse id="navbarScroll">
@@ -42,17 +41,12 @@ const Header = () => {
                                    navbarScroll
                               >
                                    <ActiveLink to="/">Home</ActiveLink>
-
-                                   <ActiveLink to="/allToys">AllToys</ActiveLink>
+                                   <ActiveLink to="/instructors">Instructors</ActiveLink>
+                                   <ActiveLink to="/classes">Classes</ActiveLink>
                                    {
                                         (user?.email) &&
-                                        <ActiveLink to="/myToys">MyToys</ActiveLink>
+                                        <ActiveLink to="/dashboard/allClass">Dashboard</ActiveLink>
                                    }
-                                   {
-                                        (user?.email) &&
-                                        <ActiveLink to="/addToy">AddToy</ActiveLink>
-                                   }
-                                   <ActiveLink to="/blog">Blog</ActiveLink>
 
                               </Nav>
                               <Form className=' d-flex '>

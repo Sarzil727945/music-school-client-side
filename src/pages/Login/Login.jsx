@@ -167,7 +167,7 @@ const Login = () => {
 
      // console.log(user);
      return (
-          <div className=' row mx-lg-5 px-lg-5 align-items-center'>
+          <div className=' row mx-lg-5 px-lg-5 align-items-center mt-3'>
                <div className=' col-lg-6 mt-lg-5 pt-lg-5 '>
                     <img className=' img-fluid w-100 imgHeight' src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7873.jpg?w=740&t=st=1684338884~exp=1684339484~hmac=29bb2f06c8bc57224e5cdbbbfb70e230a9791b942d420cc8f97b06ff27106d20" alt="" />
                </div>

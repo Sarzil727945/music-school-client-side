@@ -5,12 +5,11 @@ import Footer from '../shared/Footer/Footer';
 
 const Main = () => {
      const location = useLocation()
-     const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('register')
      return (
           <div>
-               {noHeaderFooter || <Header></Header>}
+               <Header></Header>
                <Outlet></Outlet>
-               { noHeaderFooter || <Footer></Footer>}
+               <Footer></Footer>
           </div>
      );
 };

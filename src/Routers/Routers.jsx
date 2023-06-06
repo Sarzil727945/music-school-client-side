@@ -6,6 +6,8 @@ import Main from "../Laout/Main";
 import Home from "../pages/Home/Home";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
+import AllClass from "../pagesDeshboard/AllClass/AllClass";
+import Dashboard from "../Laout/Dashboard";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -25,6 +27,18 @@ export const router = createBrowserRouter([
                     element: <Login></Login>
                },
           ]
-
      },
+     {
+          path: "dashboard",
+          element: <Dashboard></Dashboard>,
+          children: [
+               {
+                    path:"allClass",
+                    element:<AllClass></AllClass>
+               },
+               // {
+               //      path:"selectedClass"
+               // }
+          ]
+     }
 ]);
