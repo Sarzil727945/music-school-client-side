@@ -1,4 +1,4 @@
-import React, {  useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai'
 import { Link, useNavigate } from 'react-router-dom';
@@ -41,8 +41,8 @@ const Register = () => {
      const onSubmit = (data) => {
           setError('')
           setSuccess('')
-          
 
+          const specialCharacter = /^((?=.*[a-z >>!#$%&? "<<])[a-zA-Z0-9 >>!#$%&?<< ]).*$/;
           if (data.password !== data.conformPassword) {
                setError("Don't mach this password")
                return
@@ -51,6 +51,15 @@ const Register = () => {
                setError('Please The password is less than 6 characters')
                return
           }
+          else if (!/(?=.*[A-Z])/.test(data.password)) {
+               setError('Please At least one upper case')
+               return
+          }
+          else if (!specialCharacter.test(data.password)) {
+               setError('Please At least one special character')
+               return
+          }
+          
 
           // Signed up part start
           createUser(data.email, data.password)
@@ -70,19 +79,19 @@ const Register = () => {
                          .then(res => res.json())
                          .then(data => {
                               // if (data.insertedId) {
-                                   if (currentUser) {
-                                        Swal.fire({
-                                             title: 'Success!',
-                                             text: 'Register Success !!',
-                                             icon: 'success',
-                                             confirmButtonText: 'Ok'
-                                        })
-                                   }
-                                   reset();
-                                   // Verification(currentUser)
-                                   navigate('/')
-                                   setEmail('')
-                                   upDataUser(currentUser, data.name, data.photoUrl)
+                              if (currentUser) {
+                                   Swal.fire({
+                                        title: 'Success!',
+                                        text: 'Register Success !!',
+                                        icon: 'success',
+                                        confirmButtonText: 'Ok'
+                                   })
+                              }
+                              reset();
+                              // Verification(currentUser)
+                              navigate('/')
+                              setEmail('')
+                              upDataUser(currentUser, data.name, data.photoUrl)
                               // }
                          })
                     // user information post data page end
@@ -159,7 +168,7 @@ const Register = () => {
                                         <div className='parentPasswordShow position-relative'>
                                              <div>
                                                   <Form.Control type={passwordShown ? "text" : "password"} name='password' placeholder="Password" {...register("password", { required: true })}
-                                             />
+                                                  />
                                              </div>
                                              <div className='passwordShow position-absolute'>
                                                   <p className=' fs-5' onClick={togglePassword} >{
