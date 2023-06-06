@@ -1,0 +1,22 @@
+.iconPosition{
+     right: 50px;
+     bottom: 50px;
+}
+.d-block{
+     height: 600px;
+}
+.slidBorder{
+     border-radius: 10px;
+}
+.icon{
+     color: rgb(109, 108, 108);
+     border: 0px;
+     background: none;
+}
+.carousel-caption{
+     left: 0px;
+     bottom: 0px;
+}
+.text-position{
+     margin: 95px 20px !important;
+}

@@ -1,11 +1,12 @@
 import React from 'react';
 import useTitle from '../../hooks/useTitle';
+import Slider from './Slider/Slider';
 
 const Home = () => {
      useTitle('Home')
      return (
           <div className=' my-5 py-5'>
-               <h1>ok</h1>
+               <Slider></Slider>
           </div>
      );
 };
