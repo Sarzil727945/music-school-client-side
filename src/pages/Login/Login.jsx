@@ -89,7 +89,7 @@ const Login = () => {
 
                     // user information post data page start 
                      const saveUser = {name: user.displayName, email: user.email}
-                    fetch('https://assignment11-server-site-delta.vercel.app/users',{
+                    fetch('http://localhost:5000/users',{
                          method: 'POST',
                          headers: {
                               'content-type':'application/json'

@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebaseConfig/firebase.config';
+import axios from 'axios';
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -35,21 +36,21 @@ const AuthProvider = ({ children }) => {
      useEffect(() => {
           const unSubScript = onAuthStateChanged(auth, currentUser => {
                setUser(currentUser)
-               setLoading(false)
+               // setLoading(false)
 
-               // // jwt part start
-               // if (currentUser) {
-               //      axios.post('http://localhost:5000/jwt', { email: currentUser.email })
-               //           .then(data => {
-               //                console.log(data.data.token);
-               //                localStorage.setItem('access-token', data.data.token);
-               //                setLoading(false)
-               //           })
-               // }
-               // else {
-               //      localStorage.removeItem('access-token');
-               // }
-               // // jwt part end
+               // jwt part start
+               if (currentUser) {
+                    axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                         .then(data => {
+                              console.log(data.data.token);
+                              localStorage.setItem('access-token', data.data.token);
+                              setLoading(false)
+                         })
+               }
+               else {
+                    localStorage.removeItem('access-token');
+               }
+               // jwt part end
 
           })
 

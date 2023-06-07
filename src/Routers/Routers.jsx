@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import AllClass from "../pagesDeshboard/AllClass/AllClass";
 import Dashboard from "../Laout/Dashboard";
+import AllUsers from "../pagesDeshboard/AllUsers/AllUsers";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -36,9 +37,10 @@ export const router = createBrowserRouter([
                     path:"allClass",
                     element:<AllClass></AllClass>
                },
-               // {
-               //      path:"selectedClass"
-               // }
+               {
+                    path:"allUsers",
+                    element: <AllUsers></AllUsers>
+               }
           ]
      }
 ]);

@@ -49,7 +49,7 @@ const Header = () => {
                                    }
 
                               </Nav>
-                              <Form className=' d-flex '>
+                              <Form className=' d-flex fw-semibold'>
                                    {
                                         user ? <div>
                                              <img title={user.displayName} className='imgStyle me-3' src={user.photoURL} alt="" />
