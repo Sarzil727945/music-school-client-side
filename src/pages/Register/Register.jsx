@@ -69,7 +69,7 @@ const Register = () => {
 
                     // user information post data page start 
                     const saveUser = { name: data.name, email: data.email, password: data.password }
-                    fetch('https://assignment11-server-site-delta.vercel.app/users', {
+                    fetch('http://localhost:5000/users', {
                          method: 'POST',
                          headers: {
                               'content-type': 'application/json'
@@ -78,7 +78,7 @@ const Register = () => {
                     })
                          .then(res => res.json())
                          .then(data => {
-                              // if (data.insertedId) {
+                              if (data.insertedId) {
                               if (currentUser) {
                                    Swal.fire({
                                         title: 'Success!',
@@ -92,7 +92,7 @@ const Register = () => {
                               navigate('/')
                               setEmail('')
                               upDataUser(currentUser, data.name, data.photoUrl)
-                              // }
+                              }
                          })
                     // user information post data page end
                })
