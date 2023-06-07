@@ -7,8 +7,8 @@ import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
      // TODO 
-     const isAdmin = true
-     // const [isAdmin] = useAdmin();
+     // const isAdmin = true
+     const [isAdmin] = useAdmin();
      return (
           <div className='  mt-5'>
                <div className=' mt-5 pt-5 '>
@@ -16,6 +16,7 @@ const Dashboard = () => {
                          <div className="col-lg-3 bg-light p-3 text-center">
                               {
                                    isAdmin ? <>
+
                                         <div>
                                              <ActiveLink to='/dashboard/allClass'>All Class</ActiveLink>
                                         </div>
@@ -27,6 +28,7 @@ const Dashboard = () => {
                                         </div>
                                         <hr />
                                    </> : <>
+
                                         <div>
                                              <ActiveLink to='/dashboard/allClass'>All Class</ActiveLink>
                                         </div>
