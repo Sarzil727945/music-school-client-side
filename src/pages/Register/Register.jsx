@@ -66,6 +66,7 @@ const Register = () => {
                .then((userCredential) => {
                     const currentUser = userCredential.user;
                     setSuccess('Create user account successFull')
+                    upDataUser(currentUser, data.name, data.photoUrl)
 
                     // user information post data page start 
                     const saveUser = { name: data.name, email: data.email, password: data.password }
@@ -91,7 +92,6 @@ const Register = () => {
                               // Verification(currentUser)
                               navigate('/')
                               setEmail('')
-                              upDataUser(currentUser, data.name, data.photoUrl)
                               }
                          })
                     // user information post data page end

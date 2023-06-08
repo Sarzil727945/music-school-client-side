@@ -4,6 +4,7 @@ import ActiveLink from '../ActiveLink/ActiveLink';
 import Header from '../shared/Header/Header';
 import useAdmin from '../hooks/useAdmin';
 import useInstructors from '../hooks/useInstructors';
+import Footer from '../shared/Footer/Footer';
 
 const Dashboard = () => {
      // TODO 
@@ -25,14 +26,14 @@ const Dashboard = () => {
                                         <div>
                                              <ActiveLink to='/dashboard/selectedClass'>Selected Class</ActiveLink>
                                         </div>
+                                        <div>
+                                             <ActiveLink to='/dashboard/addClass'>Add Class</ActiveLink>
+                                        </div>
                                         {
                                              isAdmin && <div>
                                              <ActiveLink to='/dashboard/allUsers'>All Users</ActiveLink>
                                         </div>
                                         }
-                                        <div>
-                                             <ActiveLink to='/dashboard/addClass'>Add Class</ActiveLink>
-                                        </div>
                                         <hr />
                                    </> : <>
 
@@ -42,9 +43,6 @@ const Dashboard = () => {
                                         <div>
                                              <ActiveLink to='/dashboard/selectedClass'>Selected Class</ActiveLink>
                                         </div>
-                                        {/* <div>
-                                             <ActiveLink to='/dashboard/allUsers'>All Users</ActiveLink>
-                                        </div> */}
                                         <hr />
                                    </>
                               }
@@ -57,16 +55,7 @@ const Dashboard = () => {
                </div>
 
                <Header></Header>
-               <div className=' bg-light'>
-                    <div className="container fixed-bottom ">
-                         <p className="text-left py-4">
-                              &copy; Sarzil Muntaha @ <span className="text-info">Azmira Akhtar</span>
-                              <span className="text-info float-end">
-                                   Back to top
-                              </span>
-                         </p>
-                    </div>
-               </div>
+               <Footer></Footer>
           </div>
      );
 };

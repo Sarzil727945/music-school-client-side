@@ -10,6 +10,7 @@ import AllClass from "../pagesDeshboard/AllClass/AllClass";
 import Dashboard from "../Laout/Dashboard";
 import AllUsers from "../pagesDeshboard/AllUsers/AllUsers";
 import AddClass from "../pagesDeshboard/AddClass/addClass";
+import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -32,20 +33,21 @@ export const router = createBrowserRouter([
      },
      {
           path: "dashboard",
-          element: <Dashboard></Dashboard>,
+          element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
           children: [
                {
                     path:"allClass",
                     element:<AllClass></AllClass>
                },
                {
+                    path:"addClass",
+                    element: <AddClass></AddClass>
+               },
+               {
                     path:"allUsers",
                     element: <AllUsers></AllUsers>
                },
-               {
-                    path:"addClass",
-                    element: <AddClass></AddClass>
-               }
+              
           ]
      }
 ]);
