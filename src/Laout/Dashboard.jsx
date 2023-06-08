@@ -11,14 +11,13 @@ const Dashboard = () => {
      // const isAdmin = true
      const [isAdmin] = useAdmin();
      const [isInstructors] = useInstructors();
-     console.log(isInstructors);
      return (
           <div className='  mt-5'>
                <div className=' mt-5 pt-5 '>
                     <div className='row '>
                          <div className="col-lg-3 bg-light p-3 text-center">
                               {
-                                   (isAdmin || isInstructors )? <>
+                                   (isAdmin || isInstructors ) ? <>
 
                                         <div>
                                              <ActiveLink to='/dashboard/allClass'>All Class</ActiveLink>
@@ -29,9 +28,17 @@ const Dashboard = () => {
                                         <div>
                                              <ActiveLink to='/dashboard/addClass'>Add Class</ActiveLink>
                                         </div>
+                                        <div>
+                                             <ActiveLink to='/dashboard/myClasses'>My Classes</ActiveLink>
+                                        </div>
                                         {
                                              isAdmin && <div>
-                                             <ActiveLink to='/dashboard/allUsers'>All Users</ActiveLink>
+                                             <ActiveLink to='/dashboard/manageClasses'>Manage Classes</ActiveLink>
+                                        </div>
+                                        }
+                                        {
+                                             isAdmin && <div>
+                                             <ActiveLink to='/dashboard/manageUsers'>Manage Users</ActiveLink>
                                         </div>
                                         }
                                         <hr />
@@ -53,7 +60,6 @@ const Dashboard = () => {
                          </div>
                     </div>
                </div>
-
                <Header></Header>
                <Footer></Footer>
           </div>

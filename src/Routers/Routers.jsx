@@ -8,9 +8,11 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import AllClass from "../pagesDeshboard/AllClass/AllClass";
 import Dashboard from "../Laout/Dashboard";
-import AllUsers from "../pagesDeshboard/AllUsers/AllUsers";
-import AddClass from "../pagesDeshboard/AddClass/addClass";
 import PrivateRoute from "./PrivateRoute";
+import MyClasses from "../pagesDeshboard/MyClasses/MyClasses";
+import ManageUsers from "../pagesDeshboard/AllUsers/ManageUsers";
+import AddClass from "../pagesDeshboard/AddClass/AddClass";
+import ManageClasses from "../pagesDeshboard/ManageClasses/ManageClasses";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -44,9 +46,18 @@ export const router = createBrowserRouter([
                     element: <AddClass></AddClass>
                },
                {
-                    path:"allUsers",
-                    element: <AllUsers></AllUsers>
+                    path:"myClasses",
+                    element: <MyClasses></MyClasses>
                },
+               {
+                    path:"manageClasses",
+                    element: <ManageClasses></ManageClasses>
+               },
+               {
+                    path:"manageUsers",
+                    element: <ManageUsers></ManageUsers>
+               },
+               
               
           ]
      }

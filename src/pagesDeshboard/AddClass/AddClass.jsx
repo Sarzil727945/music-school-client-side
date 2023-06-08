@@ -19,10 +19,8 @@ const AddClass = () => {
           const photoURL = form.photoURL.value;
           const displayName = user?.displayName;
           const email = user?.email;
-          // const category = form.category.value;
           const price = form.price.value;
           const seats = form.seats.value;
-          // const quantity = form.quantity.value;
           const description = form.description.value;
 
           const add = {
@@ -30,10 +28,8 @@ const AddClass = () => {
                photoURL,
                displayName,
                email,
-               // category,
                price,
                seats,
-               // quantity,
                description,
           }
 
@@ -56,7 +52,7 @@ const AddClass = () => {
                          })
                     }
                     // server data post exit 
-                    navigate('/myClasses')
+                    navigate('/dashboard/myClasses')
 
                })
 
@@ -76,19 +72,9 @@ const AddClass = () => {
                                    <input type="text" name='name' className="form-control py-2" placeholder="Name" aria-label="name" required />
                               </div>
                               <div className="col-lg">
-                                   <input type="file" name='photoURL' className="form-control py-2" placeholder="Picture URL" aria-label="Picture URL" required />
+                                   <input type="text" name='photoURL' className="form-control py-2" placeholder="Picture URL" aria-label="Picture URL" required />
                               </div>
                          </div>
-                         {/* <div className=' row px-4 pt-4'>
-                              <div className="mb-2">
-                                   <select className="form-select py-2" name='category' aria-label="Default select example" required>
-                                        <option >Sculpting and Modeling</option>
-                                        <option value="Jewelry Making">Jewelry Making</option>
-                                        <option value="Drawing and Coloring">Drawing and Coloring</option>
-                                   </select>
-
-                              </div>
-                         </div> */}
                          <div className="row px-4 py-4">
                               <div className="col-lg mb-2">
                                    <input type="number" name='price' className="form-control py-2" placeholder="Price" aria-label="Price" required />
@@ -96,9 +82,6 @@ const AddClass = () => {
                               <div className="col-lg mb-2">
                                    <input type="number" name='seats' className="form-control py-2" placeholder="Available seats" aria-label="seats" required />
                               </div>
-                              {/* <div className="col-lg">
-                                   <input type="text" name='quantity' className="form-control py-2" placeholder="Available quantity" aria-label="Available quantity" required />
-                              </div> */}
                          </div>
                          <div className="mb-3 px-4 pb-3">
                               <textarea name='description' className="form-control py-2" id="validationTextarea" placeholder="Detail description" required rows="5"></textarea>

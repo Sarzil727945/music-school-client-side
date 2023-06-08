@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useTitle from '../../hooks/useTitle';
 import useAxiosSecure from '../../hooks/useAxiouSeoure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import { FaUserShield, FaTrashAlt } from 'react-icons/fa'
 
-const AllUsers = () => {
+const ManageUsers = () => {
      useTitle('AllUsers')
      const [axiosSecure] = useAxiosSecure();
+     const [isLoading, setIsLoading] = useState(true);
 
      const { data: users = [], refetch } = useQuery(['users'], async () => {
           const res = await axiosSecure.get('/users')
+          setIsLoading(false);
           return res.data;
      })
 
@@ -104,17 +106,17 @@ const AllUsers = () => {
                               </tbody>
                          </table>
                     </div>
-                    {/* {
+                    {
                          isLoading && <div className="text-center my-5">
                               <div className="spinner-border" role="status">
                                    <span className="visually-hidden">Loading...</span>
                               </div>
                          </div>
-                    } */}
+                    }
 
                </section>
           </div>
      );
 };
 
-export default AllUsers;
+export default ManageUsers;
