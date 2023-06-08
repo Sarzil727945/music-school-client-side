@@ -1,12 +1,12 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
-import useAdmin from '../hooks/useAdmin';
+import useInstructors from '../hooks/useInstructors';
 
-const AdminRoute = ({ children }) => {
+const InstructorsRoute = ({ children }) => {
      const { user, loading } = useAuth();
-     const [isAdmin, isAdminLoading] = useAdmin();
+     const [isInstructors, isInstructorsLoading] = useInstructors();
      const location = useLocation()
-     if (loading || isAdminLoading) {
+     if (loading || isInstructorsLoading) {
           return (<div className='mt-5 pt-5'>
                <div className="text-center mt-5 pt-5">
                <div className="spinner-border" role="status">
@@ -16,7 +16,7 @@ const AdminRoute = ({ children }) => {
           </div>
           )
      }
-    else if (user && isAdmin) {
+    else if (user && isInstructors) {
           return children
      }
      return (
@@ -26,4 +26,4 @@ const AdminRoute = ({ children }) => {
      );
 };
 
-export default AdminRoute;
+export default InstructorsRoute;

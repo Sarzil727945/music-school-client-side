@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import AllClass from "../pagesDeshboard/AllClass/AllClass";
 import Dashboard from "../Laout/Dashboard";
 import AllUsers from "../pagesDeshboard/AllUsers/AllUsers";
+import AddClass from "../pagesDeshboard/AddClass/addClass";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
                {
                     path:"allUsers",
                     element: <AllUsers></AllUsers>
+               },
+               {
+                    path:"addClass",
+                    element: <AddClass></AddClass>
                }
           ]
      }
