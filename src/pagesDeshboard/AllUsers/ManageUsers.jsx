@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import { FaUserShield, FaTrashAlt } from 'react-icons/fa'
 
 const ManageUsers = () => {
-     useTitle('AllUsers')
+     useTitle('ManageUsers')
      const [axiosSecure] = useAxiosSecure();
      const [isLoading, setIsLoading] = useState(true);
 

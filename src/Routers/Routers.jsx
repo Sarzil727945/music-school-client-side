@@ -13,6 +13,7 @@ import MyClasses from "../pagesDeshboard/MyClasses/MyClasses";
 import ManageUsers from "../pagesDeshboard/AllUsers/ManageUsers";
 import AddClass from "../pagesDeshboard/AddClass/AddClass";
 import ManageClasses from "../pagesDeshboard/ManageClasses/ManageClasses";
+import Classes from "../pages/Classes/Classes";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
                {
                     path: "/",
                     element: <Home></Home>
+               },
+               {
+                    path: "/classes",
+                    element: <Classes></Classes>
                },
                {
                     path: 'register',

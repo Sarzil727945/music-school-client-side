@@ -5,7 +5,7 @@ import SubManageClasses from './SubManageClasses/SubManageClasses';
 import useTitle from '../../hooks/useTitle';
 
 const ManageClasses = () => {
-     useTitle('MyToys')
+     useTitle('ManageClasses')
 
      const [isLoading, setIsLoading] = useState(true);
      const [classesData, setClassesData] = useState([]);

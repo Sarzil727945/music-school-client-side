@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 
 const MyClasses = () => {
+     useTitle('MyClasses')
      const { user } = useContext(AuthContext);
      const [isLoading, setIsLoading] = useState(true);
      const [classData, setClassData] = useState([]);
