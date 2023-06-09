@@ -20,7 +20,6 @@ const MyClasses = () => {
                })
      }, [url]);
      // server data get exit
-     console.log(classData);
      return (
           <div className='container mt-3'>
                <section>
