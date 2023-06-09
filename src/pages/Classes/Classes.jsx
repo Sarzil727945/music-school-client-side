@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useTitle from '../../hooks/useTitle';
+import SubClasses from './SubClasses/SubClasses';
 
 const Classes = () => {
      useTitle('Classes')
@@ -14,10 +15,17 @@ const Classes = () => {
                     setIsLoading(false);
                })
      }, [])
-     console.log(approvedData);
      return (
-          <div className=' mt-5 pt-5'>
-             
+          <div className=' mt-5 pt-5 container'>
+               <div className='row '>
+                    {
+                         approvedData.map((data, index) => <SubClasses
+                              key={data._id}
+                              data={data}
+                         ></SubClasses>
+                         )
+                    }
+               </div>
           </div>
      );
 };
