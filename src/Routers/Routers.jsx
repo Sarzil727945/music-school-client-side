@@ -14,6 +14,10 @@ import ManageUsers from "../pagesDeshboard/AllUsers/ManageUsers";
 import AddClass from "../pagesDeshboard/AddClass/AddClass";
 import ManageClasses from "../pagesDeshboard/ManageClasses/ManageClasses";
 import Classes from "../pages/Classes/Classes";
+import Selected from "../pagesDeshboard/Selected/Selected";
+import Instructors from "../pagesDeshboard/Instructors/Instructors";
+import AdminRoute from "./AdminRoute";
+import InstructorsRoute from "./InstructorsRoute";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -23,6 +27,10 @@ export const router = createBrowserRouter([
                {
                     path: "/",
                     element: <Home></Home>
+               },
+               {
+                    path:"instructors",
+                    element:<Instructors></Instructors>
                },
                {
                     path: "/classes",
@@ -44,26 +52,32 @@ export const router = createBrowserRouter([
           children: [
                {
                     path:"allClass",
-                    element:<AllClass></AllClass>
+                    element:<PrivateRoute><AllClass></AllClass></PrivateRoute>
+               },
+               {
+                    path:"selected/:id",
+                    element:<PrivateRoute><Selected></Selected></PrivateRoute>,
+               },
+               {
+                    path:"selected",
+                    element:<PrivateRoute><Selected></Selected></PrivateRoute>,
                },
                {
                     path:"addClass",
-                    element: <AddClass></AddClass>
+                    element: <InstructorsRoute><AddClass></AddClass></InstructorsRoute>
                },
                {
                     path:"myClasses",
-                    element: <MyClasses></MyClasses>
+                    element: <InstructorsRoute><MyClasses></MyClasses></InstructorsRoute>
                },
                {
                     path:"manageClasses",
-                    element: <ManageClasses></ManageClasses>
+                    element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
                },
                {
                     path:"manageUsers",
-                    element: <ManageUsers></ManageUsers>
+                    element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
                },
-               
-              
           ]
      }
 ]);

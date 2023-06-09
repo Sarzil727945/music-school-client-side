@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import './SubClasses.css'
 
 const SubClasses = ({ data }) => {
-     const { photoURL, name, displayName, seats, price } = data;
-     console.log(data);
+     const {_id, photoURL, name, displayName, seats, price } = data;
      return (
           <div className='col-lg-4 mb-4'>
                <div>
@@ -21,8 +20,7 @@ const SubClasses = ({ data }) => {
 
                               <div className=' text-center mt-4 fw-bold'>
                                    <Button variant="success">
-                                        {/* <Link className='text-decoration-none' to={`/viewRecipes/${recipesNumber}`}>{btn1} </Link> */}
-                                        Selected
+                                        <Link className='text-decoration-none text-white' to={`/dashboard/selected/${_id}`}>Selected</Link>
                                    </Button>
                               </div>
                          </Card.Body>

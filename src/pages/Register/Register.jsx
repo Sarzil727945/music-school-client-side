@@ -69,7 +69,7 @@ const Register = () => {
                     upDataUser(currentUser, data.name, data.photoUrl)
 
                     // user information post data page start 
-                    const saveUser = { name: data.name, email: data.email, password: data.password }
+                    const saveUser = { name: data.name, email: data.email, password: data.password, img: data.photoUrl }
                     fetch('http://localhost:5000/users', {
                          method: 'POST',
                          headers: {

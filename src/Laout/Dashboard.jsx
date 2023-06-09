@@ -49,7 +49,7 @@ const Dashboard = () => {
                                                   <ActiveLink to='/dashboard/allClass'>All Class</ActiveLink>
                                              </div>
                                              <div>
-                                                  <ActiveLink to='/dashboard/selectedClass'>Selected Class</ActiveLink>
+                                                  <ActiveLink to='/dashboard/selected'>Selected Class</ActiveLink>
                                              </div>
                                              <div>
                                                   <ActiveLink to='/dashboard/addClass'>Add Class</ActiveLink>
@@ -73,7 +73,7 @@ const Dashboard = () => {
                                                   <ActiveLink to='/dashboard/allClass'>All Class</ActiveLink>
                                              </div>
                                              <div>
-                                                  <ActiveLink to='/dashboard/selectedClass'>Selected Class</ActiveLink>
+                                                  <ActiveLink to='/dashboard/selected'>Selected Class</ActiveLink>
                                              </div>
                                         </>
                                    }
@@ -81,7 +81,6 @@ const Dashboard = () => {
                          </div>
                          <div className="col-lg-10">
                               <Outlet></Outlet>
-
                          </div>
                     </div>
                </div>
