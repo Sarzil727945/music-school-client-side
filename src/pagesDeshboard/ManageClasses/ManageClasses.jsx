@@ -20,6 +20,44 @@ const ManageClasses = () => {
                })
      }, [])
 
+     const handelStatusApproved = (id)=>{
+          fetch(`http://localhost:5000/class/${id}`,{
+               method: 'PATCH',
+               headers: {
+                    'content-type':'application/json'
+               },
+               body: JSON.stringify({status:"approved"})
+          })
+          .then(res => res.json())
+          .then(data=>{
+               if (data.modifiedCount > 0){
+                    const remaining=classesData.filter(classes => classes._id !== id)
+                    const updated = classesData.find(classes => classes._id === id);
+                    updated.status='approved'
+                    const newClasses = [updated, ...remaining]
+                    setClassesData(newClasses)
+               }
+          })
+     }
+     const handelStatusDenied = (id)=>{
+          fetch(`http://localhost:5000/class/${id}`,{
+               method: 'PATCH',
+               headers: {
+                    'content-type':'application/json'
+               },
+               body: JSON.stringify({status:"denied"})
+          })
+          .then(res => res.json())
+          .then(data=>{
+               if (data.modifiedCount > 0){
+                    const remaining=classesData.filter(classes => classes._id !== id)
+                    const updated = classesData.find(classes => classes._id === id);
+                    updated.status='denied'
+                    const newClasses = [updated, ...remaining]
+                    setClassesData(newClasses)
+               }
+          })
+     }
      return (
           <div className='container mt-3'>
                <section>
@@ -27,23 +65,26 @@ const ManageClasses = () => {
                          <table className="table text-center table-striped">
                               <thead className='table-light'>
                                    <tr>
+                                        <th scope="col">#</th>
                                         <th scope="col">INST NAME</th>
                                         <th scope="col">INST EMAIL</th>
                                         <th scope="col">NAME</th>
                                         <th scope="col">PICTURE</th>
                                         <th scope="col">PRICE</th>
                                         <th scope="col">SEATS</th>
-                                        <th scope="col">APPROVE</th>
-                                        <th scope="col">DENY</th>
-                                        <th scope="col">FEEDBACK</th>
+                                        <th scope="col">APPROVED</th>
+                                        <th scope="col">DENIED</th>
                                    </tr>
                               </thead>
 
                               <tbody>
                                    {
-                                       classesData.map(data => <SubManageClasses
+                                       classesData.map((data, index) => <SubManageClasses
                                              key={data._id}
                                              data={data}
+                                             index = {index}
+                                             handelStatusApproved = {handelStatusApproved}
+                                             handelStatusDenied = {handelStatusDenied}
                                         ></SubManageClasses>)
                                    }
                               </tbody>

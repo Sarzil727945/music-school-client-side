@@ -19,6 +19,7 @@ const AddClass = () => {
           const photoURL = form.photoURL.value;
           const displayName = user?.displayName;
           const email = user?.email;
+          const status = "pending";
           const price = form.price.value;
           const seats = form.seats.value;
           const description = form.description.value;
@@ -28,6 +29,7 @@ const AddClass = () => {
                photoURL,
                displayName,
                email,
+               status,
                price,
                seats,
                description,
