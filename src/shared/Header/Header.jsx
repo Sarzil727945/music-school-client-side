@@ -45,7 +45,7 @@ const Header = () => {
                                    <ActiveLink to="/classes">Classes</ActiveLink>
                                    {
                                         (user?.email) &&
-                                        <ActiveLink to="/dashboard/allClass">Dashboard</ActiveLink>
+                                        <ActiveLink to="/dashboard">Dashboard</ActiveLink>
                                    }
 
                               </Nav>

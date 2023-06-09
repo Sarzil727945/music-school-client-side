@@ -35,7 +35,7 @@ const Dashboard = () => {
                                              </h5>
                                         }
                                         {
-                                          (!isAdmin && !isInstructors)&&  <h5>(Student)</h5>
+                                             (!isAdmin && !isInstructors) && <h5>(Student)</h5>
 
                                         }
                                    </div>
@@ -45,12 +45,13 @@ const Dashboard = () => {
                                    {
                                         (isAdmin || isInstructors) ? <>
 
-                                             <div>
-                                                  <ActiveLink to='/dashboard/allClass'>All Class</ActiveLink>
-                                             </div>
-                                             <div>
+                                             {/* <div>
                                                   <ActiveLink to='/dashboard/selected'>Selected Class</ActiveLink>
                                              </div>
+
+                                             <div>
+                                                  <ActiveLink to='/dashboard/enrolledClass'>Enrolled Class</ActiveLink>
+                                             </div> */}
                                              <div>
                                                   <ActiveLink to='/dashboard/addClass'>Add Class</ActiveLink>
                                              </div>
@@ -68,13 +69,14 @@ const Dashboard = () => {
                                                   </div>
                                              }
                                         </> : <>
-
-                                             <div>
-                                                  <ActiveLink to='/dashboard/allClass'>All Class</ActiveLink>
-                                             </div>
                                              <div>
                                                   <ActiveLink to='/dashboard/selected'>Selected Class</ActiveLink>
                                              </div>
+
+                                             <div>
+                                                  <ActiveLink to='/dashboard/enrolledClass'>Enrolled Class</ActiveLink>
+                                             </div>
+
                                         </>
                                    }
                               </div>

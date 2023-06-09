@@ -6,7 +6,6 @@ import Main from "../Laout/Main";
 import Home from "../pages/Home/Home";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
-import AllClass from "../pagesDeshboard/AllClass/AllClass";
 import Dashboard from "../Laout/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import MyClasses from "../pagesDeshboard/MyClasses/MyClasses";
@@ -18,6 +17,7 @@ import Selected from "../pagesDeshboard/Selected/Selected";
 import Instructors from "../pagesDeshboard/Instructors/Instructors";
 import AdminRoute from "./AdminRoute";
 import InstructorsRoute from "./InstructorsRoute";
+import EnrolledClass from "../pagesDeshboard/EnrolledClass/EnrolledClass";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -51,16 +51,16 @@ export const router = createBrowserRouter([
           element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
           children: [
                {
-                    path:"allClass",
-                    element:<PrivateRoute><AllClass></AllClass></PrivateRoute>
+                    path:"selected",
+                    element:<PrivateRoute><Selected></Selected></PrivateRoute>,
                },
                {
                     path:"selected/:id",
                     element:<PrivateRoute><Selected></Selected></PrivateRoute>,
                },
                {
-                    path:"selected",
-                    element:<PrivateRoute><Selected></Selected></PrivateRoute>,
+                    path:"enrolledClass",
+                    element:<PrivateRoute><EnrolledClass></EnrolledClass></PrivateRoute>
                },
                {
                     path:"addClass",

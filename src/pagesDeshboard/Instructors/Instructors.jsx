@@ -15,7 +15,6 @@ const Instructors = () => {
                     setIsLoading(false);
                })
      }, [])
-     console.log(instructors);
      return (
           <div className=' container mt-5 pt-5'>
                <div className='row'>

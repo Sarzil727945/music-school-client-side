@@ -2,9 +2,13 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './SubClasses.css'
+import useAdmin from '../../../hooks/useAdmin';
+import useInstructors from '../../../hooks/useInstructors';
 
 const SubClasses = ({ data }) => {
-     const {_id, photoURL, name, displayName, seats, price } = data;
+     const [isAdmin] = useAdmin();
+     const [isInstructors] = useInstructors();
+     const { _id, photoURL, name, displayName, seats, price } = data;
      return (
           <div className='col-lg-4 mb-4'>
                <div>
@@ -19,9 +23,18 @@ const SubClasses = ({ data }) => {
                               </div>
 
                               <div className=' text-center mt-4 fw-bold'>
-                                   <Button variant="success">
-                                        <Link className='text-decoration-none text-white' to={`/dashboard/selected/${_id}`}>Selected</Link>
-                                   </Button>
+                                   {
+                                        (isAdmin || isInstructors) ? <>
+                                             <Button variant="success" disabled={true}>
+                                                  <Link className='text-decoration-none text-white' to={`/dashboard/selected/${_id}`}>Selected</Link>
+                                             </Button>
+                                        </> : <>
+                                             <Button variant="success">
+                                                  <Link className='text-decoration-none text-white' to={`/dashboard/selected/${_id}`}>Selected</Link>
+                                             </Button>
+                                        </>
+                                   }
+
                               </div>
                          </Card.Body>
                     </Card>

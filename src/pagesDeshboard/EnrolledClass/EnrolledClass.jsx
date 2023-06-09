@@ -1,8 +1,8 @@
 import React from 'react';
 import useTitle from '../../hooks/useTitle';
 
-const AllClass = () => {
-     useTitle('AllClass')
+const EnrolledClass = () => {
+     useTitle('EnrolledClass')
      return (
           <div>
                <h1>ok</h1>
@@ -10,4 +10,4 @@ const AllClass = () => {
      );
 };
 
-export default AllClass;
+export default EnrolledClass;
