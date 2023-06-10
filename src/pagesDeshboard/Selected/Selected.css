@@ -1,0 +1,10 @@
+.payImg {
+     width: 370px;
+     height: 305px;
+}
+
+@media (max-width: 720px) {
+     .weightStyle {
+          width: 100% !important;
+     }
+}

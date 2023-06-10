@@ -16,7 +16,7 @@ const SubManageClasses = ({ data, index, handelStatusApproved, handelStatusDenie
                <td><span>{seats}</span></td>
                <td>
                    {
-                    status === 'approved' ? <span>approved</span> : <button type="button" className="btn btn-danger" onClick={()=> handelStatusApproved(_id)}>APPROVED</button>
+                    status === 'approved' ? <span>approved</span> : <button type="button" className="btn btn-success" onClick={()=> handelStatusApproved(_id)}>APPROVED</button>
                    }
                </td>
                <td>

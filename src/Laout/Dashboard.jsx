@@ -19,7 +19,7 @@ const Dashboard = () => {
           <div className='  mt-5'>
                <div className=' mt-5 pt-5 '>
                     <div className='row '>
-                         <div className="col-lg-2 bg-light py-3">
+                         <div className="col-lg-2 bg-light py-5">
                               <div className='text-center pt-2'>
                                    <div>
                                         <img className=' imgStyle1' src={user.photoURL} alt="" />

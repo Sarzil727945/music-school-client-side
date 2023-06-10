@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import useTitle from '../../hooks/useTitle';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import './Selected.css';
 import Swal from 'sweetalert2';
-import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Selected = () => {
      useTitle('Selected Class')
@@ -11,9 +11,7 @@ const Selected = () => {
      const [isLoading, setIsLoading] = useState(true);
      const [selectedClass, setSelectedClass] = useState([]);
 
-
-
-     // server data get start 
+     // server selected data get start 
      const url = `http://localhost:5000/selected?email=${user?.email}`;
      useEffect(() => {
           fetch(url)
@@ -23,24 +21,71 @@ const Selected = () => {
                     setIsLoading(false);
                })
      }, [url]);
-     // server data get exit
+     // server selected data get exit
+
+     // server selected data delete start
+     const handelDelete = (id) => {
+          Swal.fire({
+               title: 'Are you sure?',
+               text: "You won't be able to revert this!",
+               icon: 'warning',
+               showCancelButton: true,
+               confirmButtonColor: '#3085d6',
+               cancelButtonColor: '#d33',
+               confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+               if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/selected/${id}`, {
+                         method: 'DELETE'
+                    })
+                         .then(res => res.json())
+                         .then(data => {
+                              if (data.deletedCount > 0) {
+                                   Swal.fire(
+                                        'Deleted!',
+                                        'Your Toy has been deleted.',
+                                        'success'
+                                   )
+                                   const remaining = selectedClass.filter(booking => booking._id !== id)
+                                   setSelectedClass(remaining);
+                              }
+                         })
+               }
+          })
+     }
+     // server selected data delete end
      console.log(selectedClass);
      return (
-          <div className=' container'>
+          <div className=' container mt-3'>
 
                <div>
                     {
                          selectedClass.map((data) => <div key={data._id}>
-                              <div className="card mb-3 w-75 mx-auto">
-                                   <div className="row g-0">
-                                        <div className="col-md-4">
-                                             <img src={data.photoURL} className="img-fluid rounded-start" alt="..."/>
+                              <div className="card mb-3 w-75 mx-lg-auto weightStyle">
+                                   <div className="row g-0 d-flex align-items-center">
+                                        <div className="col-md-5">
+                                             <img src={data.photoURL} className="img-fluid rounded-start payImg" alt="..." />
                                         </div>
-                                        <div className="col-md-8">
+                                        <div className="col-md-4">
                                              <div className="card-body">
-                                                  <h5 className="card-title">Card title</h5>
-                                                  <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                  <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                                  <h3 className="card-title">{data.name}</h3>
+                                                  <p className="card-text">{data.description}</p>
+                                                  <div className=' d-flex'>
+                                                       <p className="card-text"><small className="text-muted">Price: ${data.price}</small></p>
+                                                       <p className="card-text ms-5"><small className="text-muted">Seats: {data.seats}</small></p>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div className='col-md-3'>
+                                             <div className=' d-flex py-3 justify-content-center'>
+                                                  <div>
+                                                       <Link>
+                                                            <button type="button" className="btn btn-success me-3">Payment</button>
+                                                       </Link>
+                                                  </div>
+                                                  <div>
+                                                       <button onClick={() => handelDelete(data._id)} type="button" className="btn btn-danger">Delete</button>
+                                                  </div>
                                              </div>
                                         </div>
                                    </div>

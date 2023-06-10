@@ -58,11 +58,36 @@ const ManageUsers = () => {
      }
      // Instructors part end
 
-     // card data delete start
+     // user delete start
      const handelDelete = (user) => {
-
+          Swal.fire({
+               title: 'Are you sure?',
+               text: "You won't be able to revert this!",
+               icon: 'warning',
+               showCancelButton: true,
+               confirmButtonColor: '#3085d6',
+               cancelButtonColor: '#d33',
+               confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+               if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/users/${user._id}`, {
+                         method: 'DELETE'
+                    })
+                         .then(res => res.json())
+                         .then(data => {
+                              if (data.deletedCount > 0) {
+                                   refetch()
+                                   Swal.fire(
+                                        'Deleted!',
+                                        'User has been deleted.',
+                                        'success'
+                                   )
+                              }
+                         })
+               }
+          })
      }
-     // card data delete end
+     // delete end
 
      return (
           <div className=' container mt-3'>
@@ -90,10 +115,10 @@ const ManageUsers = () => {
                                                   {console.log()}
                                                   {
                                                        user.email === 'sarzilmuntaha@gmail.com' ? <>
-                                                            <button disabled={true} onClick={() => handelMakeInstructors(user)} className="btn btn-ghost btn-md bg-danger text-white"><FaUserShield></FaUserShield></button>
+                                                            <button disabled={true} onClick={() => handelMakeInstructors(user)} className="btn btn-ghost btn-md bg-success text-white"><FaUserShield></FaUserShield></button>
                                                        </> : <>
                                                             {
-                                                                 user.role === 'Instructors' ? 'Instructors' : <button onClick={() => handelMakeInstructors(user)} className="btn btn-ghost btn-md bg-danger text-white"><FaUserShield></FaUserShield></button>
+                                                                 user.role === 'Instructors' ? <span className=' text-primary fw-bold'>Instructors</span> : <button onClick={() => handelMakeInstructors(user)} className="btn btn-ghost btn-md bg-success text-white"><FaUserShield></FaUserShield></button>
                                                             }
                                                        </>
                                                   }
@@ -101,12 +126,18 @@ const ManageUsers = () => {
                                              </td>
                                              <td>
                                                   {
-                                                       user.role === 'admin' ? 'admin' : <button onClick={() => handelMakeAdmin(user)} className="btn btn-ghost btn-md bg-danger text-white"><FaUserShield></FaUserShield></button>
+                                                       user.role === 'admin' ? <span className=' text-primary fw-bold'>admin</span> : <button onClick={() => handelMakeAdmin(user)} className="btn btn-ghost btn-md bg-success text-white"><FaUserShield></FaUserShield></button>
 
                                                   }
                                              </td>
                                              <td>
-                                                  <button onClick={() => handelDelete(user)} className="btn btn-ghost btn-md bg-danger text-white"><FaTrashAlt /></button>
+                                                  {
+                                                       user.email === 'sarzilmuntaha@gmail.com' ? <>
+                                                            <button disabled={true} onClick={() => handelDelete(user)} className="btn btn-ghost btn-md bg-danger text-white"><FaTrashAlt /></button>
+                                                       </> : <>
+                                                            <button onClick={() => handelDelete(user)} className="btn btn-ghost btn-md bg-danger text-white"><FaTrashAlt /></button>
+                                                       </>
+                                                  }
                                              </td>
                                         </tr>)
                                    }
