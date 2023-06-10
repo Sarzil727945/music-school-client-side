@@ -43,7 +43,7 @@ const Selected = () => {
                               if (data.deletedCount > 0) {
                                    Swal.fire(
                                         'Deleted!',
-                                        'Your Toy has been deleted.',
+                                        'Your Selected Class has been deleted.',
                                         'success'
                                    )
                                    const remaining = selectedClass.filter(booking => booking._id !== id)

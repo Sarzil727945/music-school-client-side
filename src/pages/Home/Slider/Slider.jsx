@@ -15,13 +15,13 @@ const Slider = () => {
                                    <div className='p-lg-3 text-position'>
                                         <div className=' ps-lg-5 ms-lg-3'>
                                              <div className=' col-lg-4 mb-3'>
-                                                  <h2 className=' display-4 fw-semibold mb-3 pt-5'>Affordable Price For Car Servicing</h2>
+                                                  <h2 className=' display-5 fw-semibold mb-3 pt-5'>Welcome to our music school! </h2>
                                              </div>
-                                             <p className=' fs-6 col-lg-5 fw-semibold'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                                             <p className=' fs-6 col-lg-5 fw-semibold'>We are dedicated to providing a comprehensive and enriching musical education to students of all ages and skill levels.</p>
 
                                              <div className='mt-3'>
                                                   <button type="button" className="btn btn-danger me-3 mb-2">Discover More</button>
-                                                  <button type="button" className="btn text-light btn-outline-info mb-2">Latest Project</button>
+                                                  <button type="button" className="btn text-light btn-success mb-2">Latest Project</button>
                                              </div>
                                         </div>
                                    </div>
@@ -33,13 +33,13 @@ const Slider = () => {
                                    <div className='p-lg-3 text-position'>
                                         <div className=' ps-lg-5 ms-lg-3'>
                                              <div className=' col-lg-4 mb-3'>
-                                                  <h2 className=' display-4 fw-semibold mb-3 pt-5'>Affordable Price For Car Servicing</h2>
+                                                  <h2 className=' display-5 fw-semibold mb-3 pt-5'>Welcome to our music school! </h2>
                                              </div>
-                                             <p className=' fs-6 col-lg-5 fw-semibold'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                                             <p className=' fs-6 col-lg-5 fw-semibold'>We are dedicated to providing a comprehensive and enriching musical education to students of all ages and skill levels.</p>
 
                                              <div className='mt-3'>
                                                   <button type="button" className="btn btn-danger me-3 mb-2">Discover More</button>
-                                                  <button type="button" className="btn text-light btn-outline-info mb-2">Latest Project</button>
+                                                  <button type="button" className="btn text-light btn-success mb-2">Latest Project</button>
                                              </div>
                                         </div>
                                    </div>
@@ -51,13 +51,13 @@ const Slider = () => {
                                    <div className='p-lg-3 text-position'>
                                         <div className=' ps-lg-5 ms-lg-3'>
                                              <div className=' col-lg-4 mb-3'>
-                                                  <h2 className=' display-4 fw-semibold mb-3 pt-5'>Affordable Price For Car Servicing</h2>
+                                                  <h2 className=' display-5 fw-semibold mb-3 pt-5'>Welcome to our music school! </h2>
                                              </div>
-                                             <p className=' fs-6 col-lg-5 fw-semibold'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                                             <p className=' fs-6 col-lg-5 fw-semibold'>We are dedicated to providing a comprehensive and enriching musical education to students of all ages and skill levels.</p>
 
                                              <div className='mt-3'>
                                                   <button type="button" className="btn btn-danger me-3 mb-2">Discover More</button>
-                                                  <button type="button" className="btn text-light btn-outline-info mb-2">Latest Project</button>
+                                                  <button type="button" className="btn text-light btn-success mb-2">Latest Project</button>
                                              </div>
                                         </div>
                                    </div>
@@ -69,13 +69,13 @@ const Slider = () => {
                                    <div className='p-lg-3 text-position'>
                                         <div className=' ps-lg-5 ms-lg-3'>
                                              <div className=' col-lg-4 mb-3'>
-                                                  <h2 className=' display-4 fw-semibold mb-3 pt-5'>Affordable Price For Car Servicing</h2>
+                                                  <h2 className=' display-5 fw-semibold mb-3 pt-5'>Welcome to our music school! </h2>
                                              </div>
-                                             <p className=' fs-6 col-lg-5 fw-semibold'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                                             <p className=' fs-6 col-lg-5 fw-semibold'>We are dedicated to providing a comprehensive and enriching musical education to students of all ages and skill levels.</p>
 
                                              <div className='mt-3'>
                                                   <button type="button" className="btn btn-danger me-3 mb-2">Discover More</button>
-                                                  <button type="button" className="btn text-light btn-outline-info mb-2">Latest Project</button>
+                                                  <button type="button" className="btn text-light btn-success mb-2">Latest Project</button>
                                              </div>
                                         </div>
                                    </div>
@@ -87,13 +87,13 @@ const Slider = () => {
                                    <div className='p-lg-3 text-position'>
                                         <div className=' ps-lg-5 ms-lg-3'>
                                              <div className=' col-lg-4 mb-3'>
-                                                  <h2 className=' display-4 fw-semibold mb-3 pt-5'>Affordable Price For Car Servicing</h2>
+                                                  <h2 className=' display-5 fw-semibold mb-3 pt-5'>Welcome to our music school! </h2>
                                              </div>
-                                             <p className=' fs-6 col-lg-5 fw-semibold'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                                             <p className=' fs-6 col-lg-5 fw-semibold'>We are dedicated to providing a comprehensive and enriching musical education to students of all ages and skill levels.</p>
 
                                              <div className='mt-3'>
                                                   <button type="button" className="btn btn-danger me-3 mb-2">Discover More</button>
-                                                  <button type="button" className="btn text-light btn-outline-info mb-2">Latest Project</button>
+                                                  <button type="button" className="btn text-light btn-success mb-2">Latest Project</button>
                                              </div>
                                         </div>
                                    </div>
