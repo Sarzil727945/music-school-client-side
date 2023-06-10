@@ -1,14 +1,47 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './SubClasses.css'
 import useAdmin from '../../../hooks/useAdmin';
 import useInstructors from '../../../hooks/useInstructors';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SubClasses = ({ data }) => {
+     const { user } = useContext(AuthContext)
      const [isAdmin] = useAdmin();
      const [isInstructors] = useInstructors();
-     const { _id, photoURL, name, displayName, seats, price } = data;
+     const { _id, photoURL, name, displayName, seats, price, description} = data;
+     const selectData = {
+          name,
+          photoURL,
+          price,
+          seats,
+          description,
+          userName: user?.displayName,
+          email: user?.email
+     }
+     const handelSelected = (data) => {
+          //   server data post 
+          fetch('http://localhost:5000/selected', {
+               method: 'POST',
+               headers: {
+                    'content-type': 'application/json'
+               },
+               body: JSON.stringify(data)
+          })
+               .then(res => res.json())
+               .then(data => {
+                    if (data.insertedId) {
+                         Swal.fire({
+                              title: 'Success!',
+                              text: 'Your Selected Success !!',
+                              icon: 'success',
+                              confirmButtonText: 'Ok'
+                         })
+                    }
+               })
+     }
      return (
           <div className='col-lg-4 mb-4'>
                <div>
@@ -26,11 +59,11 @@ const SubClasses = ({ data }) => {
                                    {
                                         (isAdmin || isInstructors) ? <>
                                              <Button variant="success" disabled={true}>
-                                                  <Link className='text-decoration-none text-white' to={`/dashboard/selected/${_id}`}>Selected</Link>
+                                                  Selected
                                              </Button>
                                         </> : <>
-                                             <Button variant="success">
-                                                  <Link className='text-decoration-none text-white' to={`/dashboard/selected/${_id}`}>Selected</Link>
+                                             <Button onClick={() => handelSelected(selectData)} variant="success">
+                                             <Link className='text-decoration-none text-white' to={`/dashboard/selected`}>Selected</Link>
                                              </Button>
                                         </>
                                    }

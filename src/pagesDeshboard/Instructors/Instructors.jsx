@@ -19,7 +19,7 @@ const Instructors = () => {
           <div className=' container mt-5 pt-5'>
                <div className='row'>
                     {
-                         instructors.map((data) => <div key={data._id} className=' col-lg-4'>
+                         instructors.map((data) => <div key={data._id} className=' col-lg-4 mb-3'>
                               <div>
                                    <Card className=' text-center'>
                                         <Card.Body>

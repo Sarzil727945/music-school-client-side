@@ -13,11 +13,11 @@ import ManageUsers from "../pagesDeshboard/AllUsers/ManageUsers";
 import AddClass from "../pagesDeshboard/AddClass/AddClass";
 import ManageClasses from "../pagesDeshboard/ManageClasses/ManageClasses";
 import Classes from "../pages/Classes/Classes";
-import Selected from "../pagesDeshboard/Selected/Selected";
 import Instructors from "../pagesDeshboard/Instructors/Instructors";
 import AdminRoute from "./AdminRoute";
 import InstructorsRoute from "./InstructorsRoute";
 import EnrolledClass from "../pagesDeshboard/EnrolledClass/EnrolledClass";
+import Selected from "../pagesDeshboard/Selected/Selected";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -52,10 +52,6 @@ export const router = createBrowserRouter([
           children: [
                {
                     path:"selected",
-                    element:<PrivateRoute><Selected></Selected></PrivateRoute>,
-               },
-               {
-                    path:"selected/:id",
                     element:<PrivateRoute><Selected></Selected></PrivateRoute>,
                },
                {
