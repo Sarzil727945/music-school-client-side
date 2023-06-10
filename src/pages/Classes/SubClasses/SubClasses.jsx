@@ -11,7 +11,7 @@ const SubClasses = ({ data }) => {
      const { user } = useContext(AuthContext)
      const [isAdmin] = useAdmin();
      const [isInstructors] = useInstructors();
-     const { _id, photoURL, name, displayName, seats, price, description} = data;
+     const { _id, photoURL, name, displayName, seats, price, description } = data;
      const selectData = {
           name,
           photoURL,
@@ -62,9 +62,17 @@ const SubClasses = ({ data }) => {
                                                   Selected
                                              </Button>
                                         </> : <>
-                                             <Button onClick={() => handelSelected(selectData)} variant="success">
-                                             <Link className='text-decoration-none text-white' to={`/dashboard/selected`}>Selected</Link>
-                                             </Button>
+                                             {
+                                                  user ? <>
+                                                       <Button onClick={() => handelSelected(selectData)} variant="success">
+                                                            <Link className='text-decoration-none text-white' to={`/dashboard/selected`}>Selected</Link>
+                                                       </Button>
+                                                  </> : <>
+                                                       <Button variant="success">
+                                                            <Link className='text-decoration-none text-white' to={`/login`}>Selected</Link>
+                                                       </Button>
+                                                  </>
+                                             }
                                         </>
                                    }
 

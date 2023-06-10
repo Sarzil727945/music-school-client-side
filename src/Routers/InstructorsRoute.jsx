@@ -9,18 +9,8 @@ const InstructorsRoute = ({ children }) => {
      const [isAdmin, isAdminLoading] = useAdmin();
      const [isInstructors, isInstructorsLoading] = useInstructors();
      const location = useLocation()
-     if (!(isAdmin || isInstructors)) {
-          Swal.fire({
-               title: 'If you do this  for the second time, a case will be filed against you.!!',
-               showClass: {
-                 popup: 'animate__animated animate__fadeInDown'
-               },
-               hideClass: {
-                 popup: 'animate__animated animate__fadeOutUp'
-               }
-             })
-     }
-     else if (loading || isInstructorsLoading) {
+     
+     if ( isInstructorsLoading) {
           return (<div className='mt-5 pt-5'>
                <div className="text-center mt-5 pt-5">
                <div className="spinner-border" role="status">
@@ -29,6 +19,17 @@ const InstructorsRoute = ({ children }) => {
           </div>
           </div>
           )
+     }
+    else if (!(isAdmin || isInstructors)) {
+          Swal.fire({
+               title: 'You are not Instructors. So you cannot Access this Page!!',
+               showClass: {
+                 popup: 'animate__animated animate__fadeInDown'
+               },
+               hideClass: {
+                 popup: 'animate__animated animate__fadeOutUp'
+               }
+             })
      }
     else if (isAdmin || isInstructors) {
           return children

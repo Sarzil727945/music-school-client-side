@@ -36,7 +36,7 @@ const ManageUsers = () => {
                })
      }
      // admin part end
-     
+
      // Instructors part start
      const handelMakeInstructors = (user) => {
           fetch(`http://localhost:5000/users/Instructors/${user._id}`, {
@@ -87,10 +87,17 @@ const ManageUsers = () => {
                                              <td>{user.name}</td>
                                              <td>{user.email}</td>
                                              <td>
+                                                  {console.log()}
                                                   {
-                                                       user.role === 'Instructors' ? 'Instructors' : <button onClick={() => handelMakeInstructors(user)} className="btn btn-ghost btn-md bg-danger text-white"><FaUserShield></FaUserShield></button>
-
+                                                       user.email === 'sarzilmuntaha@gmail.com' ? <>
+                                                            <button disabled={true} onClick={() => handelMakeInstructors(user)} className="btn btn-ghost btn-md bg-danger text-white"><FaUserShield></FaUserShield></button>
+                                                       </> : <>
+                                                            {
+                                                                 user.role === 'Instructors' ? 'Instructors' : <button onClick={() => handelMakeInstructors(user)} className="btn btn-ghost btn-md bg-danger text-white"><FaUserShield></FaUserShield></button>
+                                                            }
+                                                       </>
                                                   }
+
                                              </td>
                                              <td>
                                                   {

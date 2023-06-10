@@ -44,14 +44,6 @@ const Dashboard = () => {
                               <div className=' ps-5 mt-2'>
                                    {
                                         (isAdmin || isInstructors) ? <>
-
-                                             {/* <div>
-                                                  <ActiveLink to='/dashboard/selected'>Selected Class</ActiveLink>
-                                             </div>
-
-                                             <div>
-                                                  <ActiveLink to='/dashboard/enrolledClass'>Enrolled Class</ActiveLink>
-                                             </div> */}
                                              <div>
                                                   <ActiveLink to='/dashboard/addClass'>Add Class</ActiveLink>
                                              </div>
