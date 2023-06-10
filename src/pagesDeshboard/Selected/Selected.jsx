@@ -5,16 +5,17 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Selected = () => {
-     useTitle('Selected Class')     
+     useTitle('Selected Class')
      let { id } = useParams();
      const { user } = useContext(AuthContext)
      const [isLoading, setIsLoading] = useState(true);
      const [selectedClass, setSelectedClass] = useState([]);
+     const [selectedClassLod, setSelectedClassLod] = useState(true);
      useEffect(() => {
           fetch('http://localhost:5000/class')
                .then(res => res.json())
                .then(classes => {
-                    if (id) {
+                    if (id && selectedClassLod) {
                          const data = classes.find(dt => dt._id === id)
                          const { name, photoURL, price, seats, description } = data
                          const selected = {
@@ -27,30 +28,31 @@ const Selected = () => {
                               email: user?.email
                          }
                          console.log(selected);
-                        
+                         setSelectedClassLod(false)
+                         return
 
+                         //   server data post 
+                         // fetch('http://localhost:5000/selected', {
+                         //      method: 'POST',
+                         //      headers: {
+                         //           'content-type': 'application/json'
+                         //      },
+                         //      body: JSON.stringify(selected)
+                         // })
+                         //      .then(res => res.json())
+                         //      .then(data => {
+                         //           if (data.insertedId) {
+                         //                Swal.fire({
+                         //                     title: 'Success!',
+                         //                     text: 'Your Selected Success !!',
+                         //                     icon: 'success',
+                         //                     confirmButtonText: 'Ok'
+                         //                })
+                         //           }
+                         //      })
+                         
                     }
-                    // server data post 
-                    //  fetch('http://localhost:5000/selected', {
-                    //      method: 'POST',
-                    //      headers: {
-                    //           'content-type': 'application/json'
-                    //      },
-                    //      body: JSON.stringify(selected)
-                    // })
-                    //      .then(res => res.json())
-                    //      .then(data => {
-                    //           if (data.insertedId) {
-                    //                Swal.fire({
-                    //                     title: 'Success!',
-                    //                     text: 'Your Selected Success !!',
-                    //                     icon: 'success',
-                    //                     confirmButtonText: 'Ok'
-                    //                })
-                    //           }
-                    //      })
                })
-
      }, []);
 
 
