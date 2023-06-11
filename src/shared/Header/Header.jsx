@@ -9,9 +9,13 @@ import { Navbar } from 'react-bootstrap';
 import logo from '../../assets/logoS.jpeg'
 import ActiveLink from '../../ActiveLink/ActiveLink';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useAdmin from '../../hooks/useAdmin';
+import useInstructors from '../../hooks/useInstructors';
 
 const Header = () => {
      const { user, logOut } = useContext(AuthContext)
+     const [isAdmin] = useAdmin();
+     const [isInstructors] = useInstructors();
      const navigate = useNavigate();
 
      // logOut part start
@@ -44,8 +48,18 @@ const Header = () => {
                                    <ActiveLink to="/instructors">Instructors</ActiveLink>
                                    <ActiveLink to="/classes">Classes</ActiveLink>
                                    {
-                                        (user?.email) &&
-                                        <ActiveLink to="/dashboard">Dashboard</ActiveLink>
+                                        (user?.email) && <>
+                                             {
+                                                  isAdmin && <ActiveLink to="/dashboard/manageClasses">Dashboard</ActiveLink>
+                                             }
+                                             {
+                                                  isInstructors && <ActiveLink to="/dashboard/AddClass">Dashboard</ActiveLink>
+                                             }
+                                             {
+                                                  !(isAdmin ||isInstructors) && <ActiveLink to="/dashboard/selected">Dashboard</ActiveLink>
+                                             }
+                                        </>
+
                                    }
 
                               </Nav>

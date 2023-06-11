@@ -10,7 +10,7 @@ const useInstructors = () => {
      queryKey:['isInstructors', user?.email],
      enabled: !loading,
      queryFn: async () => {
-          const res = await axiosSecure.get(`/users/Instructors/${user.email}`);
+          const res = await axiosSecure.get(`/users/Instructors/${user?.email}`);
           return res.data.Instructors;
      }
     })

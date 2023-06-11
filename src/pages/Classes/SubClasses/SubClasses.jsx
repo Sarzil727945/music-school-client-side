@@ -9,26 +9,28 @@ import Swal from 'sweetalert2';
 
 const SubClasses = ({ data }) => {
      const { user } = useContext(AuthContext)
+     const email = user?.email;
+     const userName = user?.displayName;
      const [isAdmin] = useAdmin();
      const [isInstructors] = useInstructors();
      const { _id, photoURL, name, displayName, seats, price, description } = data;
      const selectData = {
+          userName,
+          email,
           name,
           photoURL,
           price,
           seats,
           description,
-          userName: user?.displayName,
-          email: user?.email
      }
-     const handelSelected = (data) => {
+     const handelSelected = (selectData) => {
           //   server data post 
           fetch('https://assignment12-server-site.vercel.app/selected', {
                method: 'POST',
                headers: {
                     'content-type': 'application/json'
                },
-               body: JSON.stringify(data)
+               body: JSON.stringify(selectData)
           })
                .then(res => res.json())
                .then(data => {

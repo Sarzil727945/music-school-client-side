@@ -22,7 +22,7 @@ const Selected = () => {
                })
      }, [url]);
      // server selected data get exit
-
+console.log(selectedClass);
      // server selected data delete start
      const handelDelete = (id) => {
           Swal.fire({
