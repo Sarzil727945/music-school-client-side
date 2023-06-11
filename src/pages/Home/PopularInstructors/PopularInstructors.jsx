@@ -22,10 +22,10 @@ const PopularInstructors = () => {
                <div>
                     <div className="row my-4  no-gutter">
                          {
-                              sixInstructors.map(data=>   <div key={data._id} className="col-lg-4 mb-3 aos-init aos-animate" data-aos="fade-right"
-                              data-aos-offset="300" data-aos-easing="ease-in-sine">
-                              <img src={data.img} alt="" className=' img-fluid rounded w-100  galleryImg' />
-                         </div>)
+                              sixInstructors.map(data => <div key={data._id} className="col-lg-4 mb-3 aos-init aos-animate" data-aos="fade-right"
+                                   data-aos-offset="300" data-aos-easing="ease-in-sine">
+                                   <img src={data.img} alt="" className=' img-fluid rounded w-100  galleryImg' />
+                              </div>)
                          }
                     </div>
                </div>

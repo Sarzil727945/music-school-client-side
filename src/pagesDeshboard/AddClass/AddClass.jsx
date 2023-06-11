@@ -20,7 +20,7 @@ const AddClass = () => {
      const [axiosSecure] = useAxiosSecure();
      const { register, handleSubmit, reset } = useForm();
 
-     const img_hosting_url = `https://api.imgbb.com/1/upload?expiration=600&key=${img_hosting_token}`
+     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
 
      const onSubmit = (data) => {
 
@@ -34,12 +34,11 @@ const AddClass = () => {
                .then(res => res.json())
                .then(imgResponse => {
                     if (imgResponse.success) {
-                         const imgURL = imgResponse.data.display_url;
+                         const imgURL = imgResponse?.data?.url;
                          const { name, price, seats, description } = data;
                          const newItem = { name, price: parseFloat(price), seats, description, photoURL: imgURL, displayName, email, status }
                          axiosSecure.post('/class', newItem)
                               .then(data => {
-                                   console.log('after posting new menu item', data.data)
                                    if (data.data.insertedId) {
                                         reset();
                                         Swal.fire({
@@ -72,7 +71,7 @@ return (
                          </div>
                          <div className="col-lg">
                               <input type="file"
-                                   {...register("image", { required: true, maxLength: 120 })}
+                                   {...register("image", { required: true, })}
                                    className="form-control py-2" placeholder="Picture URL" aria-label="Picture URL" required />
                          </div>
                     </div>
