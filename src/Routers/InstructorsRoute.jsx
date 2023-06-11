@@ -31,7 +31,7 @@ const InstructorsRoute = ({ children }) => {
                }
              })
      }
-    else if (isAdmin || isInstructors) {
+    else if (isInstructors) {
           return children
      }
      return (
