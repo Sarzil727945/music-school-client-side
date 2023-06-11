@@ -23,7 +23,7 @@ const SubClasses = ({ data }) => {
      }
      const handelSelected = (data) => {
           //   server data post 
-          fetch('http://localhost:5000/selected', {
+          fetch('https://assignment12-server-site.vercel.app/selected', {
                method: 'POST',
                headers: {
                     'content-type': 'application/json'

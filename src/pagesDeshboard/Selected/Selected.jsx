@@ -12,7 +12,7 @@ const Selected = () => {
      const [selectedClass, setSelectedClass] = useState([]);
 
      // server selected data get start 
-     const url = `http://localhost:5000/selected?email=${user?.email}`;
+     const url = `https://assignment12-server-site.vercel.app/selected?email=${user?.email}`;
      useEffect(() => {
           fetch(url)
                .then(res => res.json())
@@ -35,7 +35,7 @@ const Selected = () => {
                confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
                if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/selected/${id}`, {
+                    fetch(`https://assignment12-server-site.vercel.app/selected/${id}`, {
                          method: 'DELETE'
                     })
                          .then(res => res.json())

@@ -12,7 +12,7 @@ const MyClasses = () => {
      const navigate = useNavigate()
 
      // server data get start 
-     const url = `http://localhost:5000/class?email=${user?.email}`;
+     const url = `https://assignment12-server-site.vercel.app/class?email=${user?.email}`;
      useEffect(() => {
           fetch(url)
                .then(res => res.json())

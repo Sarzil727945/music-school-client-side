@@ -12,7 +12,7 @@ const ManageClasses = () => {
      const navigate = useNavigate()
 
      useEffect(() => {
-          fetch('http://localhost:5000/class')
+          fetch('https://assignment12-server-site.vercel.app/class')
                .then(res => res.json())
                .then(data => {
                     setClassesData(data);
@@ -21,7 +21,7 @@ const ManageClasses = () => {
      }, [])
 
      const handelStatusApproved = (id)=>{
-          fetch(`http://localhost:5000/class/${id}`,{
+          fetch(`https://assignment12-server-site.vercel.app/class/${id}`,{
                method: 'PATCH',
                headers: {
                     'content-type':'application/json'
@@ -40,7 +40,7 @@ const ManageClasses = () => {
           })
      }
      const handelStatusDenied = (id)=>{
-          fetch(`http://localhost:5000/class/${id}`,{
+          fetch(`https://assignment12-server-site.vercel.app/class/${id}`,{
                method: 'PATCH',
                headers: {
                     'content-type':'application/json'
