@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import 'aos/dist/aos.css';
+
 
 const PopularInstructors = () => {
      const [isLoading, setIsLoading] = useState(true);

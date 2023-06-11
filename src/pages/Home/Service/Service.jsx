@@ -10,7 +10,8 @@ const Service = () => {
                <div className="row">
                     <div className="col-lg-6">
                          <div className=' row d-flex align-items-center mt-5'>
-                              <div className='  col-lg-6'>
+                              <div className='  col-lg-6 aos-init aos-animate' data-aos="fade-down"
+                              data-aos-offset="300" data-aos-easing="ease-in-sine">
                                    <img className='adminImg img-fluid rounded' src={smrImg} alt="" />
                               </div>
                               <div className=' col-lg-6'>
@@ -22,7 +23,8 @@ const Service = () => {
                     </div>
                     <div className="col-lg-6">
                     <div className=' row d-flex align-items-center mt-5'>
-                              <div className='  col-lg-6'>
+                              <div className='  col-lg-6 aos-init aos-animate' data-aos="fade-up"
+                              data-aos-offset="300" data-aos-easing="ease-in-sine">
                                    <img className=' adminImg img-fluid rounded' src={smImg} alt="" />
                               </div>
                               <div className=' col-lg-6'>

@@ -18,6 +18,7 @@ import AdminRoute from "./AdminRoute";
 import InstructorsRoute from "./InstructorsRoute";
 import EnrolledClass from "../pagesDeshboard/EnrolledClass/EnrolledClass";
 import Selected from "../pagesDeshboard/Selected/Selected";
+import Payment from "../pagesDeshboard/Payment/Payment";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
                {
                     path:"selected",
                     element:<PrivateRoute><Selected></Selected></PrivateRoute>,
+               },
+               {
+                    path:"payment",
+                    element:<PrivateRoute><Payment></Payment></PrivateRoute>,
                },
                {
                     path:"enrolledClass",
