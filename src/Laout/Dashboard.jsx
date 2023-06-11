@@ -7,6 +7,12 @@ import useInstructors from '../hooks/useInstructors';
 import Footer from '../shared/Footer/Footer';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import useTitle from '../hooks/useTitle';
+import { FaUsers } from 'react-icons/fa';
+import { MdClass } from 'react-icons/md';
+import { BsDatabaseFillAdd } from 'react-icons/bs';
+import { BiSelectMultiple } from 'react-icons/bi';
+import { AiFillFolderAdd } from 'react-icons/ai';
+import { GiRolledCloth } from 'react-icons/gi';
 
 const Dashboard = () => {
      useTitle('Dashboard')
@@ -41,36 +47,36 @@ const Dashboard = () => {
                                    </div>
                               </div>
                               <hr />
-                              <div className=' ps-5 mt-2'>
+                              <div className=' ps-3 mt-2'>
                                    {
                                         (isAdmin || isInstructors) ? <>
                                              {
                                                   isInstructors && <>
                                                        <div>
-                                                            <ActiveLink to='/dashboard/addClass'>Add Class</ActiveLink>
+                                                            <ActiveLink to='/dashboard/addClass'><span className='fs-4 me-1'><AiFillFolderAdd/></span>Add Class</ActiveLink>
                                                        </div>
                                                        <div>
-                                                            <ActiveLink to='/dashboard/myClasses'>My Classes</ActiveLink>
+                                                            <ActiveLink to='/dashboard/myClasses'> <span className=' fs-4 me-1'><MdClass/></span>My Classes</ActiveLink>
                                                        </div>
                                                   </>
                                              }
                                              {
                                                   isAdmin && <div>
-                                                       <ActiveLink to='/dashboard/manageClasses'>Manage Classes</ActiveLink>
+                                                       <ActiveLink to='/dashboard/manageClasses'><span className=' fs-4 me-1'><BsDatabaseFillAdd/></span> Manage Classes</ActiveLink>
                                                   </div>
                                              }
                                              {
                                                   isAdmin && <div>
-                                                       <ActiveLink to='/dashboard/manageUsers'>Manage Users</ActiveLink>
+                                                       <ActiveLink to='/dashboard/manageUsers'> <span className=' fs-4 me-1'><FaUsers/></span> Manage Users</ActiveLink>
                                                   </div>
                                              }
                                         </> : <>
                                              <div>
-                                                  <ActiveLink to='/dashboard/selected'>Selected Class</ActiveLink>
+                                                  <ActiveLink to='/dashboard/selected'><span className=' fs-4 me-1'><BiSelectMultiple></BiSelectMultiple></span>Selected Class</ActiveLink>
                                              </div>
 
                                              <div>
-                                                  <ActiveLink to='/dashboard/enrolledClass'>Enrolled Class</ActiveLink>
+                                                  <ActiveLink to='/dashboard/enrolledClass'><span className=' fs-4 me-1'><GiRolledCloth/></span>Enrolled Class</ActiveLink>
                                              </div>
 
                                         </>
