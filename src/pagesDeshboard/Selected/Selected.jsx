@@ -54,7 +54,7 @@ const Selected = () => {
           })
      }
      // server selected data delete end
-     console.log(selectedClass);
+     
      return (
           <div className=' container mt-3'>
 

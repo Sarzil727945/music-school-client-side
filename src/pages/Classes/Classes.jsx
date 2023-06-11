@@ -10,7 +10,7 @@ const Classes = () => {
           fetch('https://assignment12-server-site.vercel.app/class')
                .then(res => res.json())
                .then(data => {
-                    const approvedClasses = data.filter(data => data.status === "approved")
+                    const approvedClasses = data.filter(data => data?.status === "approved")
                     setApprovedData(approvedClasses);
                     setIsLoading(false);
                })
