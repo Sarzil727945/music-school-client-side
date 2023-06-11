@@ -69,7 +69,7 @@ const Register = () => {
                     upDataUser(currentUser, data.name, data.photoUrl)
 
                     // user information post data page start 
-                    const saveUser = { name: data.name, email: data.email, password: data.password, img: data.photoUrl }
+                    const saveUser = { name: data.name, email: data.email, img: data.photoUrl }
                     fetch('https://assignment12-server-site.vercel.app/users', {
                          method: 'POST',
                          headers: {
