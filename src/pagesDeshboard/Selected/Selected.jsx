@@ -20,7 +20,7 @@ const Selected = () => {
                     setSelectedClass(data);
                     setIsLoading(false);
                })
-     }, [url]);
+     }, [url, isLoading]);
      // server selected data get exit
      
      // server selected data delete start
