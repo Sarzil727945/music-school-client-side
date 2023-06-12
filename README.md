@@ -1,6 +1,6 @@
 # b712-summer-camp-client-side-Sarzil727945
 
-### LiveSite Link: https://6485f23ab6fff32aa82f0070--imaginative-maamoul-1624a2.netlify.app/
+### LiveSite Link: https://imaginative-maamoul-1624a2.netlify.app/
 ### This Music website Home page  slider, Popular best 6 Classes, Popular best 6 Instructors,  Awesome Service Supper admin ! .
 
 ### Login page user login this email and password or google or github anyone but email and password login you must be registered  if no registered then clicking on the registered link below will take you to the respase page.
