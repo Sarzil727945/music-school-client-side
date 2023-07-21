@@ -8,3 +8,4 @@
 
 ### Instructors page All the instructors
 ### Classes page Show all approved classes on this page.
+# music-school-client-side
