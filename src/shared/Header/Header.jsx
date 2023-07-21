@@ -11,6 +11,7 @@ import ActiveLink from '../../ActiveLink/ActiveLink';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import useAdmin from '../../hooks/useAdmin';
 import useInstructors from '../../hooks/useInstructors';
+import Swal from 'sweetalert2';
 
 const Header = () => {
      const { user, logOut } = useContext(AuthContext)
@@ -19,14 +20,34 @@ const Header = () => {
      const navigate = useNavigate();
 
      // logOut part start
-     const handelLogOut = () => {
-          logOut()
-               .then(() => {
-                    // Sign-out successful.
-               })
-               .catch((error) => {
-                    // An error happened.
-               });
+      // logOut part start
+      const handelLogOut = () => {
+          Swal.fire({
+               title: 'Are you sure?',
+               text: "Do you want to logout of your account?",
+               icon: 'warning',
+               showCancelButton: true,
+               confirmButtonColor: '#3085d6',
+               cancelButtonColor: '#d33',
+               confirmButtonText: 'Yes, Logout it!'
+          }).then((result) => {
+               if (result.isConfirmed) {
+                    logOut()
+                         .then(() => {
+                              Swal.fire(
+                                   'Logout!',
+                                   'Your Account has been logout.',
+                                   'success'
+                              )
+                              // Sign-out successful.
+                         })
+                         .catch((error) => {
+                              // An error happened.
+                         });
+               }
+
+          })
+
      }
      // logOut part end
 
@@ -67,7 +88,7 @@ const Header = () => {
                                    {
                                         user ? <div>
                                              <img title={user.displayName} className='imgStyle me-3' src={user.photoURL} alt="" />
-                                             <Button onClick={handelLogOut} variant="info" className='py-2'>Log Out</Button>
+                                             <Button onClick={handelLogOut} variant="danger" className='py-2'>Log Out</Button>
                                         </div> : <ActiveLink to="/login">Login</ActiveLink>
                                    }
                               </Form>

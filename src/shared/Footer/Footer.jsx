@@ -116,9 +116,9 @@ const Footer = () => {
                <div className="container mt-3">
                     <p className="text-left">
                          &copy; Sarzil Muntaha @ <span className="text-info">Azmira Akhtar</span>
-                         <span className="text-info float-end">
+                         <a href='#' className="text-info float-end text-decoration-none">
                               Back to top
-                         </span>
+                         </a>
                     </p>
                </div>
           </div>
