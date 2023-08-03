@@ -79,7 +79,7 @@ const Selected = () => {
                                         <div className='col-md-3'>
                                              <div className=' d-flex py-3 justify-content-center'>
                                                   <div>
-                                                       <Link to='/dashboard/payment'>
+                                                       <Link to={`/dashboard/payment/${data._id}`}>
                                                             <button type="button" className="btn btn-success me-3">Payment</button>
                                                        </Link>
                                                   </div>
