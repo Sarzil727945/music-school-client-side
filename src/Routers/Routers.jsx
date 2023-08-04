@@ -19,6 +19,8 @@ import InstructorsRoute from "./InstructorsRoute";
 import EnrolledClass from "../pagesDeshboard/EnrolledClass/EnrolledClass";
 import Selected from "../pagesDeshboard/Selected/Selected";
 import Payment from "../pagesDeshboard/Payment/Payment";
+import Success from "../pagesDeshboard/Success/Success";
+import Fail from "../pagesDeshboard/Fail/Fail";
 export const router = createBrowserRouter([
      {
           path: "/",
@@ -60,8 +62,16 @@ export const router = createBrowserRouter([
                     element:<PrivateRoute><Payment></Payment></PrivateRoute>,
                },
                {
-                    path:"enrolledClass/:tranId",
+                    path:"enrolledClass",
                     element:<PrivateRoute><EnrolledClass></EnrolledClass></PrivateRoute>
+               },
+               {
+                    path:"success/:tranId",
+                    element:<PrivateRoute><Success></Success></PrivateRoute>
+               },
+               {
+                    path:"fail/:tranId",
+                    element:<PrivateRoute><Fail></Fail></PrivateRoute>
                },
                {
                     path:"addClass",
