@@ -23,7 +23,7 @@ const EnrolledClass = () => {
                     setPayClass(payTrue);
                     setIsLoading(false);
                })
-     }, [url]);
+     }, [url, isLoading]);
      // server data get exit
 
      console.log(payClass);
